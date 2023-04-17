@@ -1,0 +1,50 @@
+<div
+  class="pl-modal pl-modal--full-page pl-modal--open"
+  data-pl-modal-role="target"
+  role="dialog"
+  aria-modal="true"
+  aria-describedby="pl-modal__heading"
+  tabindex="-1"
+>
+  <div class="pl-modal__container">
+    <div class="pl-modal__header">
+      <div class="pl-modal__heading">Title Text</div>
+      <button
+        type="button"
+        class="pl-modal__close"
+        data-pl-modal-role="close"
+        aria-label="close modal"
+        (click)="cancel()"
+      >
+        <img src="http://localhost:4200/assets/img/close.svg">
+      </button>
+    </div>
+    <!-- Note: Modals with content that scrolls require `tabindex="0"` on the `pl-modal__body` element -->
+    <div class="pl-modal__body pl-modal__body--gray  pl-modal__body--padded">
+      <!-- Sample content-1 starts here-->
+      <img *ngIf="imageUrl" [src]="imageUrl">
+      <p>{{content}}</p>
+      <!-- Sample content-1 ends here-->
+    </div>
+    <div class="pl-modal__footer ux-DEMO-modal__footer">
+      <!-- Sample content-3 starts here-->
+      <div class="pl-modal__footer-left">
+        <!-- todo:  this should be optional -->
+      </div>
+      <div class="pl-modal__footer-right">
+        <button *ngIf="showCancelButton" type="button" class="pl-button pl-button--no-border" (click)="cancel()">
+          Cancel
+        </button>
+        <button *ngIf="showSaveDraftButton" type="button" class="pl-button pl-button--secondary">
+          Save draft
+        </button>
+        <button *ngIf="showSubmitButton" type="button" class="pl-button pl-button--primary">
+          Submit
+        </button>
+      </div>
+      <!-- Sample content-3 ends here-->
+    </div>
+  </div>
+  <!-- Note: focusable span allows for focus wrap feature within Modals -->
+  <span tabindex="0"></span>
+</div>

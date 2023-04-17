@@ -1,0 +1,10 @@
+<h1 class="dummy-title">{{title}}</h1>
+<span class="empty-page-img"></span>
+<div class="buttons">
+  <button class="pl-button pl-button--primary dummy-button"
+          type="button"
+          *ngIf="!isChildrenLoaded"
+          (click)="loadDummyChild()">Load child component</button>
+</div>
+
+<router-outlet></router-outlet>

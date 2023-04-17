@@ -1,0 +1,57 @@
+<div class="capability-config">
+  <description-panel
+    [description]="details"
+    [title]="'Provisioning Integration Capability'"
+    [imgURL]="'/web-ui-content/assets/images/kubernetes.svg'"
+    [imgAlt]="'BWCE'">
+  </description-panel>
+  <div class="container">
+    <breadcrumbs [items]="breadcrumbItems"></breadcrumbs>
+    <div class="content">
+      <p class="title">Configure BWCE service</p>
+      <p class="description">descriptionLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+      <form #f="ngForm">
+        <div class="form-group">
+          <div class="cp-dropdown">
+            <div class="pl-form-field pl-form-field--text-input">
+              <input
+                type="text"
+                class="pl-form-field__input disabled"
+                placeholder="Placeholder"
+                id="version-text-input"
+                value="1.1 Latest"
+                disabled="disabled"/>
+              <label class="pl-form-field__label" for="version-text-input">Version: </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="cp-dropdown">
+            <div class="pl-form-field pl-form-field--text-input">
+              <input
+                type="text"
+                class="pl-form-field__input disabled"
+                placeholder="Placeholder"
+                id="namespace-text-input"
+                value="TIBCO"
+                disabled="disabled"/>
+              <label class="pl-form-field__label" for="namespace-text-input">Namespace: </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <footer class="footer">
+      <button id="btnNextCapabilityProvision"
+              type="button"
+              class="pl-button pl-button--primary btn-next"
+              (click)="provision()"
+              [ngClass]="{'disabled': loading}"
+              [disabled]="loading">
+        Next: Provision BWCE capabilities
+      </button>
+      <spinner class="same-line" *ngIf="loading" [height]="'100vh'" [width]="'100vw'" [position]="'absolute'" [top]="'0'" [left]="'0'" [backgroundColor]="'rgba(255,255,255,.5)'"></spinner>
+    </footer>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+.container {
+  margin: 45px 42px 54px 42px;
+
+  .content {
+    border-bottom: 1px solid #BABABA;
+    width: 646px;
+
+    .items {
+      list-style: none;
+
+      .item {
+        display: inline-block;
+        width: auto;
+        margin-right: 23px;
+        margin-bottom: 2px;
+
+        .bullet {
+          background-size: 8px 8px;
+          background-repeat: no-repeat;
+          border: 1px #727272 solid;
+          border-radius: 4px;
+          width: 8px;
+          height: 8px;
+          display: inline-block;
+        }
+
+        .text-content {
+          font-size: 12px;
+          color: #212121;
+          font-weight: 600;
+        }
+
+        .chevron-arrow-right {
+          margin-left: 22px;
+
+          &.hidden {
+            display: none;
+          }
+        }
+
+        &.is-active {
+          .bullet {
+            background-image: url("/web-ui-content/assets/images/active-item.svg");
+            border: none;
+          }
+
+          .text-content {
+            border-bottom: 2px solid #212121
+          }
+        }
+      }
+    }
+  }
+}

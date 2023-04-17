@@ -1,0 +1,46 @@
+<div class="capability-info">
+  <description-panel
+    [description]="details"
+    [title]="'Provisioning Integration Capability'"
+    [imgURL]="'/web-ui-content/assets/images/kubernetes.svg'"
+    [imgAlt]="'BWCE'">
+  </description-panel>
+  <div class="container">
+    <breadcrumbs [items]="breadcrumbItems"></breadcrumbs>
+    <div class="content">
+      <p class="title">Configure BWCE Service</p>
+      <p class="description">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </p>
+      <div class="warning">
+        <em class="warning-icon"></em>
+        <span>Please ensure that you should not register a cluster which has already been connected to an existing data plane</span>
+      </div>
+
+      <div class="instructions" *ngFor="let instruction of instructions; index as i">
+        <div class="instruction">
+          <span class="numerator">{{i + 1}}</span>
+          <span class="description">Run the bellow command on your Kubernetes cluster to provision this capability to the TIBCO namespace.</span>
+        </div>
+        <span class="command">{{instruction.command}}</span>
+        <div class="copy-btn-container">
+          <button class="pl-button pl-button--primary btn-copy"
+                id="tp-copy-capability-command"
+                (click)="copyCommand(instruction.command)">
+            Copy
+            <span class="copy-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button type="button" class="pl-button pl-button--primary btn-back" (click)="goBack()">
+        <svg class="pl-button__icon" aria-hidden="true">
+          <use xlink:href="/web-ui-content/assets/uxpl.icons.svg#pl-icon-back"></use>
+        </svg>
+        <span class="pl-button__label">Go back to Dashboard</span>
+      </button>
+    </div> <!-- End of footer -->
+  </div>
+</div>

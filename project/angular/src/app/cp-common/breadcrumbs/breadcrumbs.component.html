@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="content">
+    <ul class="items">
+      <li *ngFor="let item of items; let last = last" class="item" [class]="{'is-active': item.isActive}">
+        <em class="bullet"></em>
+        <a (click)="navigate(item)" class="text-content">
+          {{item.text}}
+        </a>
+        <div class="chevron-arrow-right" [class]="{'hidden': last}"></div>
+      </li>
+    </ul>
+  </div>
+</div>
