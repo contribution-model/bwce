@@ -5,8 +5,8 @@ import { APP_BASE_HREF } from '@angular/common';
 
 const routes: Routes = [
   // { path: '**', component: EmptyRouteComponent },
-  { path: 'angular', loadChildren: () => import('./modules/dummy/dummy.module').then(m => m.DummyModule) },
-  { path: 'bwce', loadChildren: () => import('./modules/bwce-capability/bwce-capability.module').then(m => m.BwceCapabilityModule) }
+  { path: 'cp/angular', loadChildren: () => import('./modules/dummy/dummy.module').then(m => m.DummyModule) },
+  { path: 'cp/bwce', loadChildren: () => import('./modules/bwce-capability/bwce-capability.module').then(m => m.BwceCapabilityModule) }
 ];
 
 @NgModule({
